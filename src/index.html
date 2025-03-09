@@ -16,6 +16,7 @@
                 <div id="task-sidebar">
                     <p>Lists</p>
                 </div>
+                <div id="task-main"></div>
             </div>
             <div id="left-bottom">
                 <div id="left-bottom-left">
@@ -37,6 +38,62 @@
                     <img src="images/trash.png" id="trash-icon-right" alt="Trash Icon">
                 </div>
             </div>            
+        </div>
+    </div>
+    <div id="list-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">New List</h2>
+            <form id="list-form">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" id="dueDate" name="dueDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Priority:</label>
+                    <select id="priority" name="priority" required>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <button type="submit">Create List</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Task Modal -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close task-close">&times;</span>
+            <h2 id="task-modal-title">New Task</h2>
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title">Task Name:</label>
+                    <input type="text" id="task-title" name="task-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-notes">Notes (Optional):</label>
+                    <textarea id="task-notes" name="task-notes"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="task-date">Due Date:</label>
+                    <input type="date" id="task-date" name="task-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-time">Due Time:</label>
+                    <input type="time" id="task-time" name="task-time" required>
+                </div>
+                <button type="submit">Add Task</button>
+            </form>
         </div>
     </div>
 </body>

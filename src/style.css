@@ -48,7 +48,11 @@ body {
     justify-content: center;
     align-items: center ;
     font-size: 1.2rem;
-    border-bottom: 2px solid gray;
+}
+
+#task-main {
+    padding: 10px;
+    overflow-y: auto;
 }
 
 #left-bottom {
@@ -89,7 +93,15 @@ body {
 }
 
 #right > h1 {
-    font-size: 4rem;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.8rem;
+    color: #333;
+    padding: 10px;
+    border-bottom: 2px solid #eee;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 #right-container {
@@ -133,4 +145,205 @@ body {
 
 #trash-icon-right {
     margin: 1rem;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    min-height: 100px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.list-item {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.list-item:hover {
+    transform: translateX(5px);
+}
+
+.list-item.active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.list-title {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.list-date {
+    font-size: 0.8rem;
+    color: #666;
+    font-style: italic;
+}
+
+.high-priority {
+    border-left: 4px solid #ff4d4d;
+}
+
+.medium-priority {
+    border-left: 4px solid #ffcc00;
+}
+
+.low-priority {
+    border-left: 4px solid #4da6ff;
+}
+
+/* Task Card Styles */
+#right-main {
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.task-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.task-card.completed {
+    opacity: 0.7;
+    background-color: #f9f9f9;
+}
+
+.task-card.completed .task-card-title {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-card-title {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.task-card-notes {
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.task-card-datetime {
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.task-checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.task-checkbox {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.empty-tasks-message {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-style: italic;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 20px;
 }
